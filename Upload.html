@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div >
+        <div>
+            <h4 class="text-center text-3xl font-semibold mt-6">
+                Stream your pdf files as cells
+            </h4>
+        </div>
+        <div class="flex items-center justify-center w-full mt-12 mb-24 px-8">
+        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex flex-col items-center justify-center w-[90%] h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-100  hover:bg-gray-200">
+            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <svg class="w-8 h-8 mb-2 mr-2 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                </svg>
+                <div class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Upload</div>         
+                       <p class="mb-2 text-md text-gray-800 font-semibold"><span class="font-semibold"></span>Upload any pdf file</p>
+            </div>
+            <input id="dropzone-file" type="file" class="hidden" />
+        </button>
+
+
+
+  
+  <!-- Main modal -->
+  <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative p-4 w-full max-w-md max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+              <!-- Modal header -->
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                  <h3 class="text-lg font-semibold text-gray-900 ">
+                      Upload a file
+                  </h3>
+                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-toggle="crud-modal">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>
+              <!-- Modal body -->
+              <form class="p-4 md:p-5">
+                  <div class="grid gap-4 mb-4 grid-cols-2">
+                      <div class="col-span-2">
+                          <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name of Pdf</label>
+                          <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "  required="">
+                      </div>
+                      <div class="col-span-2">
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Collection Name</label>
+                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "  required="">
+                    </div>
+                      <div class="col-span-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 " for="file_input">Browse file</label>
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none " id="file_input" type="file">
+                      </div>
+                  </div>
+                  <div class="flex flex-row justify-center">
+                  <button type="submit" class="mt-6 text-white inline-flex items-center bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                      <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                      Add 
+                  </button>
+                </div>
+              </form>
+          </div>
+      </div>
+  </div> 
+  
+    </div> 
+
+    <div class="flex flex-row justify-center px-36">
+
+        <ol class="items-center sm:flex">
+            <li class="relative mb-6 sm:mb-0">
+                <div class="flex items-center">
+                    <div class="z-10 flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full ring-2 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-800" width="1.5rem" height="1.5rem" viewBox="0 0 56 56"><path d="M27.944 20.058c.443 0 .81.133 1.221.502l8.06 7.772c.352.351.563.726.563 1.242c0 .96-.703 1.64-1.687 1.64c-.47 0-.961-.187-1.29-.562L31.25 26.88l-1.594-1.664l.164 3.492V46.77c0 .985-.867 1.805-1.875 1.805c-1.007 0-1.851-.82-1.851-1.805V28.707l.14-3.492l-1.593 1.664l-3.54 3.773a1.71 1.71 0 0 1-1.265.563c-.984 0-1.71-.68-1.71-1.641c0-.516.187-.89.538-1.242l7.922-7.64c.469-.47.89-.634 1.36-.634m4.737-16.287c8.507 0 15.403 6.896 15.403 15.402c0 .484-.023.963-.066 1.435c4.303 1.014 7.506 4.88 7.506 9.492c0 5.386-4.366 9.752-9.752 9.752h-11.25v-3.75h11.248a6.002 6.002 0 0 0 6.002-6.002a6.006 6.006 0 0 0-4.617-5.842l-3.174-.748l.3-3.247c.034-.36.05-.724.05-1.09c0-6.435-5.216-11.652-11.652-11.652a11.637 11.637 0 0 0-9.777 5.31l-1.525 2.344l-2.681-.792a4.994 4.994 0 0 0-6.408 4.574l-.004.293l.093 3.15l-2.997.691a6.594 6.594 0 0 0-5.1 6.422a6.59 6.59 0 0 0 6.59 6.59h10.652v3.75H10.872c-5.71 0-10.34-4.63-10.34-10.34c0-4.908 3.42-9.018 8.007-10.076l-.004-.264a8.744 8.744 0 0 1 11.225-8.387c2.747-4.223 7.508-7.015 12.921-7.015"/></svg>                    </div>
+                    <div class="hidden sm:flex w-full h-0.5 bg-gray-700"></div>
+                </div>
+                <div class="mt-2 pt-4 sm:pe-8">
+                    <p class="text-lg font-semibold text-gray-900 text-center pl-12">Upload any pdf file <br>or try it out from our <a style="hover{cursor: pointer;}" data-modal-target="select-modal" data-modal-toggle="select-modal" class=" underline">collection</a> of books.</p>
+                </div>
+            </li>
+            <li class="relative mb-6 sm:mb-0">
+                <div class="flex items-center">
+                    <div class="z-10 flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full ring-2 shrink-0 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 512 512"><path fill="none" stroke="#000040" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0 1 16 16v288a16 16 0 0 1-16 16c-128 0-177.45 25.81-208 64c-30.37-38-80-64-208-64c-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0 1 16-16c131.57.59 192 32.84 208 96m0 0v288"/></svg>                    </div>
+                    <div class="hidden sm:flex w-full h-0.5 bg-gray-700"></div>
+                </div>
+                <div class="mt-2 pt-4 sm:pe-8">
+                    <p class="text-lg font-semibold text-gray-900 text-center pl-12">Break your overwhelming book into our <br> simplified cells by AI.</p>
+                </div>
+            </li>
+            <li class="relative mb-6 sm:mb-0">
+                <div class="flex items-center">
+                    <div class="z-10 flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full ring-2 shrink-0 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-800" width="1.5rem" height="1.5rem" viewBox="0 0 256 256"><path  d="M228.88 26.19a9 9 0 0 0-9.16-1.57L17.06 103.93a14.22 14.22 0 0 0 2.43 27.21L72 141.45V200a15.92 15.92 0 0 0 10 14.83a15.91 15.91 0 0 0 17.51-3.73l25.32-26.26L165 220a15.88 15.88 0 0 0 10.51 4a16.3 16.3 0 0 0 5-.79a15.85 15.85 0 0 0 10.67-11.63L231.77 35a9 9 0 0 0-2.89-8.81m-61.14 36l-89.59 64.16l-49.6-9.73ZM88 200v-47.48l24.79 21.74Zm87.53 8l-82.68-72.5l119-85.29Z"/></svg>
+                    </div>
+                    <div class="hidden sm:flex w-full h-0.5 bg-gray-700"></div>
+                </div>
+                <div class="mt-2 pt-4 sm:pe-8">
+                    <p class="text-lg font-semibold pt- text-gray-900 text-center pl-12">Stream your cells on<br> Telegram. <br></p>
+                </div>
+            </li>
+        </ol>
+
+
+
+  
+  <!-- Main modal -->
+  <div id="select-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative p-4 w-full max-w-md max-h-full">
+          <!-- Modal content -->
+          <div class="relative  rounded-lg shadow bg-gray-700"> 
+              <!-- Modal header -->
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-600">
+                  <h3 class="text-lg font-semibold  text-white">
+                      Sample Books
+                  </h3>
+                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="select-modal">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-4 md:p-5">
+                  <ul class="space-y-4 mb-4">
+                    {% for pdf in sample_pdfs %} 
+                    <li>
+                            <!-- link for pdf render  -->
+                          <a href="{% url 'pdf.pdf_file.url' %}"> 
+                          <div class="inline-flex items-center justify-between w-full p-5  border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-500 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-900  text-white bg-gray-600 hover:bg-gray-500">                           
+                              <div class="block">
+                                  <div class="w-full text-lg font-semibold">{{pdf.name}} </div>
+                                  <div class="w-full text-gray-500 dark:text-gray-400">{{pdf.subject}}</div>
+                              </div>
+                              <svg class="w-4 h-4 ms-3 rtl:rotate-180 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/></svg>
+                            </div>
+                        </a>
+                      </li>
+                    {% endfor %}
+                    
+                  </ul>
+
+              </div>
+          </div>
+      </div>
+  </div> 
+  
+
+    </div>
+</div>
+
+
+{% endblock %}

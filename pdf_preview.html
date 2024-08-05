@@ -1,0 +1,57 @@
+  <div class="absolute rounded-md h-[95%] w-[85%] z-0 hide-scroll-bar overflow-scroll ml-8  ">
+      <div class="border-2 border-gray-400 rounded-md ">    
+          <img class="p-1 h-full rounded-md" src="data:image/png;base64,{{ page.highlighted_page_image }}" alt="pdf">
+      </div> 
+  </div>
+  <div class="absolute w-full bottom-0">
+
+      <div class="w-full h-16 bg-white  z-10">
+          <div class="flex h-full w-full justify-between ">
+                  <div class="flex align-middle h-full hover:bg-gray-200 hover:duration-200 ">
+                      <button type="button" data-tooltip-target="tooltip-page" class=" justify-center px-5   group" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+                          <svg class="group-hover:text-blue-600" xmlns="http://www.w3.org/2000/svg" width="1.25rem" height="1.5rem" viewBox="0 0 20 20"><path fill="#4b4b4b" d="M19.3 16.608c.386 0 .699.312.699.696a.7.7 0 0 1-.7.696H.703a.7.7 0 0 1-.7-.696c0-.384.314-.696.7-.696zM15.98 6.492a.7.7 0 0 1 .988.003l2.827 2.827a.7.7 0 0 1 .003.987l-2.812 2.812a.7.7 0 0 1-.987-.003a.7.7 0 0 1-.003-.987l2.32-2.32l-2.332-2.332a.7.7 0 0 1-.003-.987m-1.163 2.639c.387 0 .7.312.7.696a.7.7 0 0 1-.7.696H.7a.7.7 0 0 1-.7-.696c0-.384.313-.696.7-.696zM19.3 2c.387 0 .7.312.7.696a.7.7 0 0 1-.7.696H.703a.7.7 0 0 1-.7-.696c0-.384.314-.696.7-.696z"/></svg>
+                      </button>
+                      <div id="tooltip-page" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip ">
+                      Pages
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+                  </div>
+                  <div class="flex items-center justify-center ">
+                      <div class="flex items-center justify-between w-full text-gray-600 bg-gray-100 rounded-lg  max-w-[128px] mx-2">
+                        {% if page.order > 1 %}
+                        <a href="{% url 'cellapp:previous_page' pdf.id page.order %}">
+                        <button type="button" class="inline-flex items-center justify-center h-8 px-1 w-6 bg-gray-100 rounded-s-lg  hover:bg-gray-200  focus:outline-none focus:ring-2 focus:ring-gray-200 ">
+                              <svg class="w-2 h-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                              </svg>
+                              <span class="sr-only">Previous page</span>
+                          </button>
+                          </a>
+                     {% endif %}
+                          <span class="flex-shrink-0 mx-1 text-sm font-medium space-x-0.5 rtl:space-x-reverse"> {{ page.order }} of {{ pdf.page_count }} </span>
+                          {% if page.order < pdf.page_count %}
+                          <a href="{% url 'cellapp:next_page' pdf.id page.order %}">
+                          <button type="button" class="inline-flex items-center justify-center h-8 px-1 w-6 bg-gray-100 rounded-e-lg hover:bg-gray-200  focus:outline-none focus:ring-2 focus:ring-gray-200 ">
+                              <svg class="w-2 h-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                              </svg>
+                              <span class="sr-only">Next page</span>
+                          </button>
+                          </a>
+                    {% endif %} 
+                      </div>
+                  </div>
+                  <div class="flex align-middle h-full my-auto hover:bg-gray-200 hover:duration-200 ">
+                  <button  id="drawRectButton" type="button" data-tooltip-target="tooltip-select" class=" justify-center px-5 group" >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 32 32"><path fill="#4b4b4b" d="M12 6H8V2H6v4H2v2h4v4h2V8h4zm4 0h4v2h-4zm8 0v2h4v4h2V8a2 2 0 0 0-2-2zM6 16h2v4H6zm2 12v-4H6v4a2 2 0 0 0 2 2h4v-2zm20-12h2v4h-2zM16 28h4v2h-4zm12-4v4h-4v2h4a2 2 0 0 0 2-2v-4z"/></svg>
+                  </button>
+                  <div id="tooltip-select" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip ">
+                      Select in Page
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+              </div>
+              </div>
+      </div>
+  </div>
+
+  
