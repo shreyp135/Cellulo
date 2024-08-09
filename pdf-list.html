@@ -41,10 +41,13 @@
                     <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
                         <span class="ms-3">Currently Streaming</span>
                     </a>
-                    <p class="ml-12 text-sm font-medium"> <div class="flex justify-start ml-8 gap-4 ">
-                        <img  src="{% static 'images/telegram-2.svg' x}" />
-                        {{streaming_pdf.name}}</p>
-                    </div>
+                    <p class="ml-12 text-sm font-medium">
+                        <div class="flex justify-start ml-8 gap-4 ">
+                            <img  src="{% static 'images/telegram-2.svg'}" />
+                            {% if streaming_pdf is defined %}
+                                {{streaming_pdf.name}}</p>
+                            {% endif %}
+                        </div>
                 </li>
                 {% for collection in collections %}
                 <li>
@@ -69,6 +72,7 @@
     <!-- Main content -->
     <div class=" flex-grow h-screen overflow-scroll hide-scroll-bar justify-center flex flex-col">
         <!-- Active PDF -->
+        {% if streaming_pdf is defined %}
         <div class="mt-8 flex flex-row justify-center">
             <div class="flex flex-col w-2/3 relative bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 hover:duration-200 shrink-0">
                 <div class="absolute text-blue-500 animate-border flex items-center justify-center">
@@ -119,7 +123,7 @@
                 </div>
             </div>
         </div>
-
+        {% endif %}
         <!-- Collections -->
         <div class="w-full flex flex-col gap-12 justify-center mt-16 mb-8">
             {% for collection in collections %}
