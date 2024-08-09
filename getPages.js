@@ -1,4 +1,4 @@
-const pagesArray = JSON.parse(sessionStorage.getItem("pages"));
+const pagesArray = JSON.parse(localStorage.getItem("pages"));
 
 
 const pageList = document.getElementById("pageList");
