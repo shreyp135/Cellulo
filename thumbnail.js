@@ -41,19 +41,19 @@
          console.error('Error loading PDF:', error);
        });
     }
-    
-    //for streaming pdf
-    const streaming_pdf = document.getElementById("thumbnail{{pdf.id}}");
-    //get pdf url for streaming pdf
-    getThumbnail(streaming_pdf.id,url);
 
 
-    //for each pdf in collection
-    const pdfLists = document.querySelectorAll("thumbnail");
-    pdfLists.forEach(element => {
-    const id = element.getAttribute('data-id');
-    //get pdf url for pdf 
-    getThumbnail(id,url);
 
-});
+//for streaming pdf
+const streaming_pdf = document.getElementById("thumbnail{{pdf.id}}");
 
+//get pdf url for streaming pdf
+getThumbnail(streaming_pdf.id,url);
+
+ //for each pdf in collection
+ const pdfLists = document.querySelectorAll("thumbnail");
+ pdfLists.forEach(element => {
+ const id = element.getAttribute('data-id');
+ //get pdf url for pdf 
+ getThumbnail(id,url);
+}
