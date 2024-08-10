@@ -6,7 +6,7 @@
                     <div class="w-full">
                         <div class="flex items-center justify-evenly mx-auto mb-1">
                             <button id="autoplay" data-tooltip-target="tooltip-autoplay" type="button" class="p-2.5 group rounded-full hover:bg-gray-100 me-1 focus:outline-none focus:ring-4 focus:ring-gray-200 ">
-                                <img src="{% static 'images/autoplay.svg' x}" />                          
+                                <img src="{% static 'images/autoplay.svg' %}" />                          
                                  <span class="sr-only">Autoplay</span>
                             </button>
                             <div id="tooltip-autoplay" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300  rounded-lg shadow-sm opacity-0 tooltip bg-gray-700">
@@ -14,7 +14,7 @@
                                 <div class="tooltip-arrow" data-popper-arrow></div>
                             </div>
                             <button id="previous" data-tooltip-target="tooltip-previous" type="button" class="p-2.5 group rounded-full hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 ">
-                                <img src="{% static 'images/previousButton.svg' x}" />
+                                <img src="{% static 'images/previousButton.svg' %}" />
                                 <span class="sr-only">Previous</span>
                             </button>
                             <div id="tooltip-previous" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300  rounded-lg shadow-sm opacity-0 tooltip bg-gray-700">
@@ -22,8 +22,8 @@
                                 <div class="tooltip-arrow" data-popper-arrow></div>
                             </div>
                             <button id="playPause" data-tooltip-target="tooltip-pause" type="button" class=" inline-flex items-center justify-center p-2.5 mx-2 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4  focus:outline-none focus:ring-blue-800">
-                                <img id="pauseIcon" class="w-4 h-4" src="{% static 'images/pauseIcon.svg' x}" />
-                                <img id="playIcon" class="w-4 h-4" style="display: none;" src="{% static 'images/playIcon.svg' x}" />
+                                <img id="pauseIcon" class="w-4 h-4" src="{% static 'images/pauseIcon.svg' %}" />
+                                <img id="playIcon" class="w-4 h-4" style="display: none;" src="{% static 'images/playIcon.svg' %}" />
                                 <span class="sr-only ">Pause/Pause </span>
                             </button>
                             <div id="tooltip-pause" role="tooltip"  class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 rounded-lg shadow-sm opacity-0 tooltip bg-gray-700">
@@ -31,7 +31,7 @@
                                 <div class="tooltip-arrow" data-popper-arrow></div>
                             </div>
                             <button id="next" data-tooltip-target="tooltip-next" type="button" class="p-2.5 group rounded-full hover:bg-gray-100 me-1 focus:outline-none focus:ring-4 focus:ring-gray-200 ">
-                                <img src="{% static 'images/nextButton.svg' x}" />
+                                <img src="{% static 'images/nextButton.svg' %}" />
                                 <span class="sr-only">Next cell</span>
                             </button>
                             <div id="tooltip-next" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300  rounded-lg shadow-sm opacity-0 tooltip bg-gray-700">
@@ -39,7 +39,7 @@
                                 <div class="tooltip-arrow" data-popper-arrow></div>
                             </div>
                             <button id="speed" data-tooltip-target="tooltip-speed" type="button" class="p-2.5 group rounded-full hover:bg-gray-100 me-1 focus:outline-none focus:ring-4 focus:ring-gray-200 ">
-                                 <img src="{% static 'images/speedIcon.svg' x}" />                                 
+                                 <img src="{% static 'images/speedIcon.svg' %}" />                                 
                                  <span class="sr-only">Speed</span>
                             </button>
                             <div id="tooltip-speed" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300  rounded-lg shadow-sm opacity-0 tooltip bg-gray-700">
@@ -57,7 +57,7 @@
                             </div>
                     </div> 
                     <button id="stop" data-tooltip-target="tooltip-stop" type="button" class="p-2.5 group rounded-full hover:bg-gray-100 focus:outline-none ml-4 ">
-                        <img src="{% static 'images/stopButton.svg' x}" />
+                        <img src="{% static 'images/stopButton.svg' %}" />
                         <span class="sr-only">Stop</span>
                             </button >
                             <div id="tooltip-stop" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300  rounded-lg shadow-sm opacity-0 tooltip bg-gray-700">
@@ -74,7 +74,7 @@
                 <div class=" h-8 absolute hover:bg-slate-200 hover:duration-300 rounded-full p-[0.3rem] z-5 -left-9 top-20 mt-1">
                     <!-- for bookmark     -->
                     <a href=""> 
-                        <img src="{% static 'images/bookmark.svg' x}" />
+                        <img src="{% static 'images/bookmark.svg' %}" />
                     </a>    
                 </div>  
             <div class="group-hover:block group-hover:duration-300 hidden inset-0 absolute bg-transparent hover:bg-[rgba(40,40,40,0.3)] z-10 flex flex-col align-middle justify-center ">
@@ -84,19 +84,19 @@
                         <button id="speakButton" class="textel" data-text="{{cell.content}}">  
                     <div class=" h-8 hover:bg-gray-300 hover:duration-300 rounded-full p-1  ">
    
-                        <img src="{% static 'images/readAloud.svg' x}" />
+                        <img src="{% static 'images/readAloud.svg' %}" />
                         </div>
                          </button>
                         <div class=" h-8 hover:bg-gray-300 hover:duration-300 rounded-full p-1   ">
                             <!-- copy button -->
                             <a href="">
-                                <img src="{% static 'images/copy.svg' x}" />    
+                                <img src="{% static 'images/copy.svg' %}" />    
                             </a>
                         </div>  
                         <div class="h-8 hover:bg-gray-300 hover:duration-300 rounded-full p-1   ">
                             <!-- dropdown in cell -->
                             <button id="dropdownMenuIconButton{{cell.id}}" data-dropdown-toggle="dropdownDots{{cell.id}}" class="inline-flex items-center text-sm font-medium text-center text-gray-900 bg-transparent rounded-lg" type="button">
-                                <img style="width:1.5rem; height:1.5rem" src="{% static 'images/more.svg' x}" />                              
+                                <img style="width:1.5rem; height:1.5rem" src="{% static 'images/more.svg' %}" />                              
                           
                         </button>
                     </div>
@@ -131,21 +131,21 @@
                 <div class="flex-auto w-10 h-10 hover:bg-slate-200 hover:duration-300 rounded-full p-1 mt-24 ml-4">
                     <!-- whatsapp -->
                     <a href="">
-                        <img src="{% static 'images/whatsapp.svg' x}" />       
+                        <img src="{% static 'images/whatsapp.svg' %}" />       
                     </a>
                 </div>
                 
                 <div class="flex-auto w-10 h-10 hover:bg-slate-200 hover:duration-300 rounded-full p-1 ml-4"> 
                     <!-- telegram  -->
                     <a href="">
-                        <img src="{% static 'images/telegramSingleColour.svg' x}" />     
+                        <img src="{% static 'images/telegramSingleColour.svg' %}" />     
                     </a>
                 </div>
             
                 <div class="flex-auto w-10 h-10 hover:bg-slate-200 hover:duration-300 rounded-full p-1 ml-4">
                     <!-- copy link of cell  -->
                     <a href="">
-                        <img src="{% static 'images/link.svg' x}" />
+                        <img src="{% static 'images/link.svg' %}" />
                     </a>
                 </div>  
             </div>
