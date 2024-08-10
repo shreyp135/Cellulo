@@ -2,6 +2,7 @@ const pagesArray = JSON.parse(localStorage.getItem("pages"));
 
 
 const pageList = document.getElementById("pageList");
+const pdfId = pageList.getAttribute("data-id");
 
 for(const i=0;i<pagesArray.length();i++)
 {
@@ -13,9 +14,7 @@ for(const i=0;i<pagesArray.length();i++)
     pageNumberDiv.innerText = `${i+1}`;
 
     const link = document.createElement("a");
-    const pdfId = `{{pdf.id}}`
     link.href = `/cells/render/${pdfId}/${i+1}/`;
-
     link.appendChild(img);
     link.appendChild(pageNumberDiv);
     pageList.appendChild(link);

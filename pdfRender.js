@@ -44,5 +44,7 @@ async function renderPdf(pdfUrl) {
 }
 
 // Call the renderPdf function when the render page is opened
+const currPage = document.getElementById("currPage");
+const pdfUrl = currPage.getAttribute("data-url");
 window.onload = renderPdf(pdfUrl);
 

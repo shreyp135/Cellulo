@@ -1,6 +1,6 @@
   <div class="absolute rounded-md h-[95%] w-[85%] z-0 hide-scroll-bar overflow-scroll ml-8  ">
       <div class="border-2 border-gray-400 rounded-md ">    
-          <img id="currPage" class="p-1 h-full rounded-md" src="data:image/png;base64,{{ page.highlighted_page_image }}" alt="pdf">
+          <img data-url="{{pdf.url}}" id="currPage" class="p-1 h-full rounded-md" src="data:image/png;base64,{{ page.highlighted_page_image }}" alt="pdf">
       </div> 
   </div>
   <div class="absolute w-full bottom-0">
@@ -12,7 +12,7 @@
                         <img class="group-hover:text-blue-600" src="{% static 'images/pageDrawer.svg' %}" />  
                       </button>
                       <div id="tooltip-page" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip ">
-                      Pages
+                         Pages
                       <div class="tooltip-arrow" data-popper-arrow></div>
                   </div>
                   </div>

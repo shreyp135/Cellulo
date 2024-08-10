@@ -43,17 +43,24 @@
     }
 
 
-
 //for streaming pdf
 const streaming_pdf = document.getElementById("thumbnail{{pdf.id}}");
 
-//get pdf url for streaming pdf
-getThumbnail(streaming_pdf.id,url);
+//get pdf url and id for streaming pdf
+const streaming_url = streaming_pdf.getAttribute("data-url");
+const streaming_id = streaming_pdf.getAttribute("data-id");
+
+//get thumbnail for streaming pdf
+getThumbnail(streaming_id,streaming_url);
 
  //for each pdf in collection
  const pdfLists = document.querySelectorAll("thumbnail");
  pdfLists.forEach(element => {
- const id = element.getAttribute('data-id');
- //get pdf url for pdf 
- getThumbnail(id,url);
-}
+
+ //get pdf url and id for every pdf in collection 
+ const pdfId = element.getAttribute("data-id");
+ const pdfUrl = element.getAttribute("data-url");
+
+ //get thumbnails for pdfs
+ getThumbnail(pdfId, pdfUrl);
+});

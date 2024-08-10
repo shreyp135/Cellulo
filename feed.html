@@ -82,16 +82,15 @@
                     <div class=" flex flex-row rounded-3xl bg-gray-200 w-fit gap-2 p-2 h-fit">
                         <!-- read aloud button -->
                         <button id="speakButton" class="textel" data-text="{{cell.content}}">  
-                    <div class=" h-8 hover:bg-gray-300 hover:duration-300 rounded-full p-1  ">
-   
-                        <img src="{% static 'images/readAloud.svg' %}" />
-                        </div>
+                             <div class=" h-8 hover:bg-gray-300 hover:duration-300 rounded-full p-1  ">
+                                 <img src="{% static 'images/readAloud.svg' %}" />
+                            </div>
                          </button>
                         <div class=" h-8 hover:bg-gray-300 hover:duration-300 rounded-full p-1   ">
                             <!-- copy button -->
-                            <a href="">
-                                <img src="{% static 'images/copy.svg' %}" />    
-                            </a>
+                            <button class="copyButton" data-text="{{cell.content}}">
+                                <img src="{% static 'images/copy.svg' %}"/>    
+                            </button>
                         </div>  
                         <div class="h-8 hover:bg-gray-300 hover:duration-300 rounded-full p-1   ">
                             <!-- dropdown in cell -->

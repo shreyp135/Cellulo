@@ -37,10 +37,18 @@
     <span class="sr-only">Close menu</span>
  </button>
     <div class="py-4 overflow-y-auto mt-4 text-white text-center">
-      <div id="pageList" class="w-full grid grid-cols-2 gap-4 ">
+      <div data-id="{{pdf.id}}" id="pageList" class="w-full grid grid-cols-2 gap-4 ">
         
       </div>
     </div>
+</div>
+
+<!-- clipboard toast -->
+<div id="copyToast" style="display: none;">
+  <div  class="fixed flex items-center w-full max-w-[18%] p-4 space-x-4  divide-x rtl:divide-x-reverse  rounded-lg shadow right-5 bottom-10 text-white divide-gray-700 bg-gray-800" role="alert">
+    <img class="w-5 h-5 text-blue-500" src="{% static 'images/copy.svg' %}" />
+    <div class="ps-4 text-sm font-normal"> Cell copied to clipboard !</div>
+  </div>
 </div>
 
 
