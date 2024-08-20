@@ -18,7 +18,7 @@
 <!-- the main panels layout div-->
 <div  style="width: 100%;" class=" flex flex-row z-0 hide-scroll-bar h-[88vh]" >
 
-    <div id="left" class="relative w-[33%] h-full pt-2" >
+    <div id="left" class="relative w-[40%] h-full pt-2" >
         {% include './pdf_preview.html' %}
     </div>
     <div id="resizer" class="w-1  cursor-ew-resize bg-gray-300"></div>
@@ -53,13 +53,12 @@
 
 
 <script src="{% static 'js/click.js' %}"></script>
-<script src="{% static 'js/resize.js' %}"></script>
+<!-- <script src="{% static 'js/resize.js' %}"></script> -->
 <script src="{% static 'js/read_aloud.js' %}"></script>
 <script src="{% static 'js/pdfRender.js' %}"></script>
 <script src="{% static 'js/copy.js' %}"></script>
 <script src="{% static 'js/getpages.js' %}"></script>
-
-<!-- <script src="{% static 'js/fabric.js' %}"></script>  -->
+<script src="{% static 'js/fabric.js' %}"></script> 
 
 
 {% endblock %}

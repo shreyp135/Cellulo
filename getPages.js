@@ -24,8 +24,8 @@ for(const i=0;i<pagesArray.length();i++)
 
 function setPage(){
     const pageNumber = `{{page.order}}`;
-    const page = document.getElementById("currPage");
-    page.src = pagesArray[pageNumber-1];
+    const page = document.getElementById("drawingDiv");
+    page.setAttribute("img-url", pagesArray[pageNumber-1])
 }
 
 window.onload = setPage();
